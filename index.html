@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <title>Workshop</title>
+    <!-- EmailJS -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            // https://dashboard.emailjs.com/admin/account
+            emailjs.init('_E72vmrNo22wIbR5M');
+        })();
+    </script>
+    <script type="text/javascript">
+        window.onload = function() {
+            const btn = document.getElementById('contact-form-button');
+            document.getElementById('contact-form').addEventListener('submit', function(event) {
+                event.preventDefault();
+
+                btn.value = 'Sending...';
+                
+                emailjs.sendForm('contact_service', 'contact_form', this)
+                    .then(function() {
+                        btn.value = 'Send Email';
+                        alert('Sent!');
+                    }, function(error) {
+                        btn.value = 'Send Email';
+                        alert(JSON.stringify(err));
+                    });
+            });
+        }
+    </script>
+</head>
+<body>
+    <!-- Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand px-4" href="#">SEMAPA</a>
+        <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavId" aria-controls="collapsibleNavId"
+            aria-expanded="false" aria-label="Toggle navigation">
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavId">
+            <ul class="navbar-nav me-auto mt-2 mt-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#" aria-current="page">Home<span class="visually-hidden">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="#value-prop" aria-current="page">Value Creation<span class="visually-hidden">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="#about">About</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link active dropdown-toggle" href="#" id="dropdownId" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Background</a>
+                    <div class="dropdown-menu" aria-labelledby="dropdownId">
+                        <a class="dropdown-item" href="#">Action 1</a>
+                        <a class="dropdown-item" href="#">Action 2</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="#opportunity" aria-current="page">Opportunity<span class="visually-hidden">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#market-ctx" aria-current="page">Market Context<span class="visually-hidden">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#req-form" aria-current="page">Req Form<span class="visually-hidden">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact-us" aria-current="page">Contact Form<span class="visually-hidden">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="#feedback" aria-current="page">Testimonials<span class="visually-hidden">(current)</span></a>
+                </li>
+            </ul>
+            
+        </div>
+    </nav>
+
+    
+
+    <!-- ========== Value Creation Section ========== -->
+    <section class="pt-4 value-prop-section ">
+        <h1 id="value-prop">Value Creation</h1>
+        <div>
+            <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+                <div class="col-10 col-sm-8 col-lg-6">
+                    <img src="images/hero_image.jpg" class="d-block mx-lg-auto img-fluid" alt="Three workers discuss an idea" width="1200" height="800" loading="lazy">
+                </div>
+                <div class="col-lg-5">
+                    <h2 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">An innovative approach to circularity. We're on a mission to reduce waste in C&D</h2>
+                    <p class="lead">Veniam reprehenderit amet esse aute nostrud consectetur dolor sunt sit anim aute proident qui. Do laboris est irure sunt enim dolore aliqua non. Non ullamco ipsum dolore fugiat. Reprehenderit sunt deserunt ullamco consequat.</p>
+                </div>
+            </div>
+            <div class="d-flex flex-column justify-content-end align-items-end">
+                <h2 class="align-self-end display-5" id="value-prop-header">Revolutionizing your business with predictable effects</h2>
+                <div class="range-container d-flex flex-column w-50 gap-4 align-self-end justify-content-end">
+                    <div class="estimator-range d-flex w-100 flex-row gap-2">
+                        <label style="display: block; width: 120px;" for="employee-range">Number of Employees</label>
+                        <div class="range-box d-flex w-100 gap-2 flex-row align-items-center justify-content-end">
+                            <input class="w-100" type="range" id="employee-range" min="50" max="100" value="5">
+                            <p style="max-width: 110px; min-width: 80px;" class="mt-1"  id="employee-value">50</p>
+                        </div>
+                    </div>
+                    <div class="estimator-range d-flex w-100 flex-row gap-2">
+                        <label style="display: block; width: 120px;" for="salary-range">Average Salary</label>
+                        <div class="range-box d-flex w-100 gap-2 flex-row align-items-end justify-content-center">
+                            <input class="w-100" type="range" id="salary-range" min="10000" max="90000" value="50000">
+                            <p style="max-width: 110px; min-width: 80px;" class="mt-1" id="salary-value">€ 50,000</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="estimation-section d-flex justify-content-center">
+                    <div class="card savings-card" id="savings-card" style="width: 18rem;">
+                        <div class="card-body">
+                            <h2 class="card-title mb-4">Year savings</h2>
+                            <h3 class="card-subtitle mb-2">€ <span id="savings-amount">25000</span></h3>
+                        </div>
+                    </div>
+                    <div class="card" id="roi-card" style="width: 18rem;">
+                        <div class="card-body">
+                            <h2 class="card-title mb-4">Estimated ROI</h2>
+                            <h3 class="card-subtitle mb-2"><span id="roi-factor">2.5</span>x</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <script src="estimator.js"></script>
+        </div>
+    </section>
+
+    <!-- ========== About Section ========== -->
+    <section class="pt-4 about-section">
+        
+        <h1 id="about">About</h1>
+        <h4 class="text-size-20px">Team</h4>
+        <img src="images/team.webp" alt="A man holds waste next to a waste container">
+        <p>Somos uma equipa focada no reaproveitamento de resíduos para efeitos de circularidade</p>
+        <p class="">
+            Leia mais sobre como pode hoje começar a <a href="circularity.html">participar nesta prática</a>
+        </p> 
+        <h4 class="text-size-20px">Project</h4>
+        <p>Consectetur elit eiusmod pariatur eu quis ut culpa nisi. Sunt aute labore ad exercitation. Quis dolore dolor qui ad enim exercitation fugiat sit duis.</p>
+        <h4 class="text-size-20px">Sponsors/Partners</h4>
+        <div class="slider">
+            <div class="logo-slider">
+                <img src="https://i.postimg.cc/1XhzhCXf/client-logo-1.png" alt="">
+                <img src="https://i.postimg.cc/j2HSsHnv/client-logo-2.png" alt="">
+                <img src="https://i.postimg.cc/44Vdbg2t/client-logo-3.png" alt="">
+                <img src="https://i.postimg.cc/ZKmqwMXQ/client-logo-4.png" alt="">
+                <img src="https://i.postimg.cc/1XhzhCXf/client-logo-1.png" alt="">
+                <img src="https://i.postimg.cc/j2HSsHnv/client-logo-2.png" alt="">
+                <img src="https://i.postimg.cc/44Vdbg2t/client-logo-3.png" alt="">
+                <img src="https://i.postimg.cc/ZKmqwMXQ/client-logo-4.png" alt="">
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== Background Section ========== -->
+    <section class="mt-4 background-section">
+        <h1 id="background">Background</h1>
+    </section>
+    
+    <!-- ========== Grafana Section ========== -->
+    <section class="mt-4 grafana-section">
+        <h1 id="grafana">Grafana</h1>
+        <!-- https://grafana.com/docs/grafana/latest/dashboards/share-dashboards-panels/#embed-panel -->
+        <iframe
+            src="https://snapshots.raintank.io/dashboard-solo/snapshot/y7zwi2bZ7FcoTlB93WN7yWO4aMiz3pZb?from=1493369923321&to=1493377123321&panelId=4"
+            width="100%"
+            height="300"
+            frameborder="0"
+        ></iframe>
+    </section>
+
+    <!-- ========== Opportunity Section ========== -->
+    <section class="mt-4 opportunity-section">
+        <h1 id="opportunity">Opportunity</h1>
+        <p>
+            Do quis enim incididunt commodo magna laborum pariatur aliqua tempor voluptate incididunt. Ad pariatur ad do sit cillum enim. Eiusmod occaecat enim nulla ex nisi sunt dolor duis exercitation exercitation. Est sunt adipisicing eu irure in aliqua ullamco irure deserunt sunt dolore commodo.
+        </p>
+        <p>
+            Ea anim cillum exercitation ullamco cillum anim esse amet fugiat ea ad. Nisi commodo deserunt reprehenderit incididunt occaecat id culpa consequat ut mollit minim ipsum nulla dolor. Velit in magna enim aliquip Lorem qui aliquip irure do velit quis sit. Incididunt esse aliquip aliqua est sit et officia ex nostrud aute adipisicing. Proident nulla irure duis sit. Eu laboris do cupidatat dolor nostrud irure laborum commodo dolor.
+        </p>
+    </section>
+
+    <!-- ========== Market Context Section ========== -->
+    <section class="mt-4 market-ctx-section">
+        <h1 id="market-ctx">Market Context</h1>
+        <p>Officia aute ex mollit cupidatat laborum aliquip ullamco officia. Excepteur velit excepteur quis id. Cillum culpa deserunt in laborum ullamco cillum tempor cupidatat laboris. Qui occaecat in veniam non amet Lorem tempor pariatur incididunt incididunt nulla laborum fugiat.
+        <p>
+            Ea id laboris do tempor magna eu laboris fugiat nostrud sint excepteur et irure. Tempor deserunt aute do consectetur amet aute nisi consectetur cillum elit consectetur proident reprehenderit id. Ipsum ut exercitation do aliqua culpa sunt nostrud proident. Exercitation sint elit aute ut fugiat sit sint voluptate do commodo consectetur pariatur cillum et.</p>
+        </p>
+        <p>
+            Ipsum sint magna consectetur ut sit cupidatat non occaecat eiusmod cillum et eu do est. Est laborum velit sit in Lorem ex sint consequat sint officia reprehenderit in. Deserunt aliqua et qui et reprehenderit ut enim aute id labore excepteur Lorem quis.
+        </p>
+        <p>
+            Amet ullamco et id consectetur. Adipisicing anim ea incididunt eiusmod minim aliqua. Reprehenderit amet aliqua fugiat tempor laboris duis incididunt est. Aliqua ea deserunt consectetur anim tempor commodo enim ad proident reprehenderit laboris.
+        </p>
+
+        <p class="fs-2">Local video</p>
+        <video width="800" height="500" controls>
+            <source src="videos/construction-sample.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <p class="fs-2">Youtube video</p>
+        <iframe width="800" height="500" src="https://www.youtube.com/embed/AcngC5KH1Gk?autoplay=1&mute=1"></iframe>
+
+        </iframe>
+    </section>
+
+    <!-- ========== Request Form Section ========== -->
+    <section class="mt-4 req-form-section d-flex flex-column ">
+
+        <h1 id="req-form"> Make a request</h1>
+        <div class=" row col-12"> 
+            <div class="col-4" > 
+            <p style="margin-top: 20%"> What is your request? </p>
+            </div>
+            <div class="col-8">
+            <form id="cardForm" >
+            <label for="req-form-name" class="form-label">Name:</label>
+            <input type="text" class="form-control" id="req-form-name" name="name" placeholder="Your name..." required>
+            
+            <label for="req-form-role" class="form-label mt-2" >Role:</label>
+            <input type="text" class="form-control" id="req-form-role" name="role" 
+            placeholder="E.g. Sales Director..." required>
+        
+            <label for="req-form-email" class="form-label mt-2" >Email:</label>
+            <input type="email" class="form-control" id="req-form-email" name="email" placeholder="Your email..." required>
+            
+            <label for="req-form-request" class="form-label mt-2" >Request</label>
+            <input type="text" class="form-control" id="req-form-request" name="pedido" 
+            placeholder="Service/Product ID..." required>
+        
+            <button type="submit" class="btn btn-primary mt-4" >Generate request</button>
+            </form>
+            </div>
+        </div>
+
+        <h1 id="req-form-in-review"> Currently in review </h1>
+        <p> Request in approval phase  </p>
+        <div class="container text-center">
+            <div class="row">
+            <div class="col">
+        
+                <!-- space for new cards with suggestions-->
+                <div id="cardContainer"></div>
+        
+            </div>
+        </div>
+        <script src="request-form.js"></script>
+    </section>
+
+    <!-- ========== Contact Form Section ========== -->
+    <section class="mt-4 contact-form-section d-flex flex-row gap-4">
+        <div class="d-flex flex-column" style="max-width: 33%">
+            <h1 id="contact-us">Do you need any help?</h1>
+            <p class="fs-3" style="margin-top: 20%">Our team of experts will help you to set up your monitoring application reducing costs and time.</p>
+        </div>
+        
+        <form class="d-flex flex-column flex-grow-1 min-width-50" id="contact-form" >
+            <div class="d-flex flex-row gap-2">
+                <div class="flex-fill">
+                    <label for="contact-form-first-name" class="form-label flex-fill">First name <span class="required-field">*</span></label>
+                    <input type="text" class="form-control flex-fill" id="contact-form-first-name" name="first_name" placeholder="Your first name..." required>
+                </div>
+                <div class="flex-fill">
+                    <label for="contact-form-last-name" class="form-label">Last name <span class="required-field">*</span> </label>
+                    <input type="text" class="form-control" id="contact-form-last-name" name="last_name" placeholder="Your last name..." required>
+                </div>
+            </div>
+            
+            <label for="contact-form-email" class="form-label mt-2" >Email <span class="required-field">*</span></label>
+            <input type="email" class="form-control" id="contact-form-email" name="email" placeholder="Your company email address..." required>
+            
+            <div class="d-flex flex-row justify-content-between flex-grow-1 mt-2 gap-2">
+                <div class="flex-fill">
+                    <label for="contact-form-company-name" class="form-label">Company name <span class="required-field">*</span></label>
+                    <input type="text" class="form-control" id="contact-form-company-name" name="company_name" placeholder="Your company name..." required>
+                </div>
+                <div class="flex-fill">
+                    <label for="contact-form-country" class="form-label">Country/Region <span class="required-field">*</span></label>
+                    <input type="text" class="form-control" id="contact-form-country" name="country" placeholder="Your country/region..." required>
+                </div>
+            </div>
+
+            <div class="d-flex flex-row justify-content-between flex-grow-1 mt-2 gap-2">
+                <div class="flex-fill">
+                    <label for="contact-form-phone" class="form-label">Phone</label>
+                    <input type="text" class="form-control" id="contact-form-phone" name="phone" placeholder="Your phone...">
+                </div>
+                <div class="flex-fill">
+                    <label for="contact-form-role" class="form-label">Role</label>
+                    <input type="text" class="form-control" id="contact-form-role" name="role" placeholder="e.g. Sales Director">
+                </div>
+            </div>
+            
+            <label for="contact-form-message" class="form-label mt-2" >Your Message <span class="required-field">*</span></label>
+            <textarea class="form-control" id="contact-form-message" name="message" id="" rows="5" placeholder="How can we help?" required></textarea>
+        
+            <input type="submit" id="contact-form-button" class="btn btn-primary mt-4" value="Send Email"></input>
+        </form>
+    </section>
+
+    <!-- ========== Customer Feedback Section ========== -->
+    <section class="mt-4 feedback-section d-flex flex-column ">
+        <h1 id="feedback">Customer Feedback</h1>
+        <div id="myCarousel" class="carousel slide mb-6" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2" class=""></button>
+                <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3" class="active" aria-current="true"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item">
+                    <svg class="bd-placeholder-img" width="100%" height="300" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#607466"></rect></svg>
+                    <div class="container">
+                        <div class="carousel-caption text-start">
+                            <h1><i>Excelente apoio ao cliente</i></h1>
+                            <p class="opacity-75">"Trabalhamos há muitos anos com a empresa X e o apoio ao cliente é excelente."</p>
+                            <p class="opacity-75">- <i>Jane Doe, X Corp.</i></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <svg class="bd-placeholder-img" width="100%" height="300" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#4A5952"></rect></svg>
+                    <div class="container">
+                        <div class="carousel-caption">
+                            <h1><i>Non ut ullamco non mollit consequat aliqua veniam quis proident amet.</i></h1>
+                            <p class="opacity-75">"Outro testemunho."</p>
+                            <p class="opacity-75">- <i>Ben Fischer, Smitty's Marketplace</i></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item active">
+                    <svg class="bd-placeholder-img" width="100%" height="300" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#343E3D"></rect></svg>
+                    <div class="container">
+                        <div class="carousel-caption text-end">
+                        <h1><i>A qualidade dos materiais superou expectativas</i></h1>
+                        <p class="opacity-75">"Nostrud Lorem mollit cupidatat eu. Labore occaecat minim quis aliquip est exercitation esse officia aute. Cillum cupidatat aliquip fugiat ipsum deserunt quis esse enim exercitation laboris qui ipsum aute."</p>
+                        <p class="opacity-75">- <i>Alice K. Lam, ElemCements </i></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </section>
+
+    <!-- ========== Footer Section ========== -->
+    <section class="footer">
+        <footer class="py-5">
+            <div class="row">
+                <div class="col-6 col-md-2 mb-3">
+                    <h5>Sinergias</h5>
+                    <ul class="nav flex-column">
+                        <li class="nav-item mb-2"><a href="#" class="nav-link footer-link p-0">Home</a></li>
+                        <li class="nav-item mb-2"><a href="#about" class="nav-link footer-link p-0">About</a></li>
+                        <li class="nav-item mb-2"><a href="#req-form" class="nav-link footer-link p-0">Make an Order</a></li>
+                        <li class="nav-item mb-2"><a href="#req-form-in-review" class="nav-link footer-link p-0">Pending Orders</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-6 col-md-2 mb-3">
+                    <h5>Sensores</h5>
+                    <ul class="nav flex-column">
+                    <li class="nav-item mb-2"><a href="#" class="nav-link footer-link p-0">Home</a></li>
+                    <li class="nav-item mb-2"><a href="#about" class="nav-link footer-link p-0">About</a></li>
+                    <li class="nav-item mb-2"><a href="#grafana" class="nav-link footer-link p-0">Grafana</a></li>
+                    <li class="nav-item mb-2"><a href="#contact-us" class="nav-link footer-link p-0">Contact us</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-6 col-md-2 mb-3">
+                    <h5>Circularidade</h5>
+                    <ul class="nav flex-column">
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 footer-link">Home</a></li>
+                        <li class="nav-item mb-2"><a href="#about" class="nav-link p-0 footer-link">About</a></li>
+                        <li class="nav-item mb-2"><a href="#background" class="nav-link p-0 footer-link">Background</a></li>
+                        <li class="nav-item mb-2"><a href="#opportunity" class="nav-link p-0 footer-link">Opportunity</a></li>
+                        <li class="nav-item mb-2"><a href="#market-ctx" class="nav-link p-0 footer-link">Market Context</a></li>
+                        <li class="nav-item mb-2"><a href="#value-prop" class="nav-link p-0 footer-link">Value Creation</a></li>
+                        <li class="nav-item mb-2"><a href="#feedback" class="nav-link p-0 footer-link">Testimonials</a></li>
+                        <li class="nav-item mb-2"><a href="#contact-us" class="nav-link p-0 footer-link">Contact us</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-md-5 offset-md-1 mb-3">
+                    <form>
+                        <h5>Subscribe to our newsletter</h5>
+                        <p>Monthly digest of what's new and exciting from us.</p>
+                        <div class="d-flex flex-column flex-sm-row w-100 gap-2">
+                            <label for="newsletter1" class="visually-hidden">Email address</label>
+                            <input id="newsletter1" type="text" class="form-control" placeholder="Email address">
+                            <button class="btn btn-primary disabled" type="button">Subscribe</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
+                <p>© 2023 SEMAPA. Todos os direitos reservados.</p>
+            </div>
+        </footer>
+    </section>
+    
+
+</body>
+</html>

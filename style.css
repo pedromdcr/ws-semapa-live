@@ -1,0 +1,142 @@
+body {
+    background-color: #F4F5F8;
+    width: 100%;
+}
+
+nav {
+    background-color: #242E32;
+}
+
+section {
+    width: 100%;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+.about-section {
+    background-color: #ffffff;
+}
+.background-section {
+    background-color: #F4F5F8;
+}
+.opportunity-section {
+    background-color: #ffffff;
+}
+.market-ctx-section {
+    background-color: #F4F5F8;
+}
+.req-form-section {
+    background-color: #ffffff;
+}
+.value-prop-section {
+    background-color: #607466;
+    color: #ffffff;
+}
+.feedback-section {
+    background-color: #F4F5F8;
+}
+
+.footer {
+    background-color: #242E32;
+    color: #ffffff;
+}
+
+.footer-link {
+    color:#ffffff;
+}
+
+.footer-link:hover {
+    color:#607466;
+}
+
+/****************************/
+/********** Forms ***********/
+/****************************/
+.required-field {
+    color: red;
+}
+
+
+/****************************/
+/***** Sliding Sponsors *****/
+/****************************/
+@keyframes logoSlider {
+    0% { transform: translateX(0); }
+	100% { transform: translateX(calc(-100% * 4))}
+}
+
+.logo-slider{
+    display: flex;
+    animation: logoSlider 40s infinite linear ;
+}
+
+.logo-slider img{
+    margin: 0 40px;
+}
+
+.slider{
+    white-space: nowrap;
+    overflow: hidden;
+    padding: 80px 0;
+    position: relative;
+}
+
+.slider::before, .slider::after{
+    position: absolute;
+    top: 0;
+    width: 150px;
+    height: 100%;
+    content: "";
+    z-index: 2;
+}
+
+.slider::before{
+    left: 0;
+    background:linear-gradient(to left, rgba(255,255,255,0), #ffffff);
+}
+
+.slider::after{
+    right: 0;
+    background:linear-gradient(to right, rgba(255,255,255,0), #ffffff);
+}
+
+/****************************/
+/***** Range Estimation *****/
+/****************************/
+.range-container {
+    display: flex;
+    flex-direction: column; /* Display sliders vertically */
+    align-items: center; /* Center sliders horizontally */
+}
+
+input[type="range"] {
+    width: 80%;
+    margin-bottom: 10px; /* Add space between sliders */
+    accent-color: #ffffff;
+}
+
+.card {
+    border: 1px solid #607466;
+    padding: 20px;
+    margin: 20px;
+    display: inline-block;
+    width: 90%;
+    background-color: #242E32;
+    color: #ffffff;
+}
+
+/* Media queries for responsiveness */
+@media (min-width: 768px) {
+    /* Desktop styles */
+    .range-container {
+        flex-direction: row; /* Display sliders horizontally for larger screens */
+    }
+
+    .range-container input[type="range"] {
+        width: 48%; /* Adjust the width of sliders for desktop layout */
+    }
+
+    .card {
+        width: calc(50% - 40px);
+    }
+}
